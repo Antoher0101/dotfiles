@@ -1,0 +1,33 @@
+{
+	"languageserver": {
+		"ccls": {
+			"command": "ccls",
+			"filetypes": ["c", "cpp", "objc", "objcpp"],
+			"rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+			"initializationOptions": {
+				"cache": {
+					"directory": "/tmp/ccls"
+				}
+			}
+		}
+	},
+	"java.jdt.ls.java.home": "/usr/lib/jvm/java-17-openjdk-amd64/",
+	"java.jdt.ls.vmargs": "",
+	"java.import.gradle.jvmArguments":"-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8787",
+	"java.configuration.runtimes": [
+		{
+			"name": "JavaSE-17",
+			"path": "/usr/lib/jvm/java-17-openjdk-amd64"
+		}
+	],
+	"java.completion.enabled": true,
+	"java.imports.autoAdd": true,
+	"java.imports.organize": true,
+	"codeLens.enable": true,
+	"java.referencesCodeLens.enabled": true,
+	"java.quickfix.showAt": "line",
+	"java.jdt.ls.lombokSupport.enabled": true,
+	"java.jdt.ls.protobufSupport.enabled": true,
+	"semanticTokens.enable": true,
+	"java.import.gradle.java.home": "/usr/lib/jvm/jdk1.8.0_411"
+}

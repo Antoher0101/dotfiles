@@ -30,7 +30,7 @@ endif
 call plug#begin()
 " Основные плагины
 Plug 'tpope/vim-dispatch'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'         " Для работы с git
 Plug 'airblade/vim-gitgutter'    " Для отображения изменений в git
 
@@ -60,7 +60,6 @@ Plug 'sonph/onehalf', { 'rtp': 'vim' } " Тема onehalf
 
 " Плагины для улучшения навигации
 Plug 'airblade/vim-rooter'    " Автоматический переход в корень проекта
-Plug 'thaerkh/vim-workspace' " Для сохранения состояния проекта
 
 " Плагины для выделения текста
 Plug 'machakann/vim-highlightedyank' " Подсветка выделенного текста
@@ -100,40 +99,40 @@ nmap <leader><F5> :CocCommand java.debug.vimspector.start<CR>
 nnoremap <Leader>dt :call vimspector#ToggleBreakpoint()<CR>
 nnoremap <Leader>dT :call vimspector#ClearBreakpoints()<CR>
 "" Coc
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-nmap <silent> gd <Plug>(coc-definition)
-
-nmap <silent> gD <Plug>(coc-declaration)
-
-nmap <silent> gr <Plug>(coc-references)
-
-nmap <silent> gi <Plug>(coc-implementation)
-
-nnoremap <silent> K :call ShowDocumentation()<CR>
-
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction
-
-nmap <leader>rn <Plug>(coc-rename)
-
-"quickfix
-nmap <leader>qf  <Plug>(coc-fix-current)
-inoremap <silent><expr> <c-@> coc#refresh()
+"inoremap <silent><expr> <TAB>
+"      \ coc#pum#visible() ? coc#pum#next(1) :
+"      \ CheckBackspace() ? "\<Tab>" :
+"      \ coc#refresh()
+"inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+"
+"function! CheckBackspace() abort
+"  let col = col('.') - 1
+"  return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
+"
+"inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+"                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"
+"nmap <silent> gd <Plug>(coc-definition)
+"
+"nmap <silent> gD <Plug>(coc-declaration)
+"
+"nmap <silent> gr <Plug>(coc-references)
+"
+"nmap <silent> gi <Plug>(coc-implementation)
+"
+"nnoremap <silent> K :call ShowDocumentation()<CR>
+"
+"function! ShowDocumentation()
+"  if CocAction('hasProvider', 'hover')
+"    call CocActionAsync('doHover')
+"  else
+"    call feedkeys('K', 'in')
+"  endif
+"endfunction
+"
+"nmap <leader>rn <Plug>(coc-rename)
+"
+""quickfix
+"nmap <leader>qf  <Plug>(coc-fix-current)
+"inoremap <silent><expr> <c-@> coc#refresh()
